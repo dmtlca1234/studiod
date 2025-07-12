@@ -1,49 +1,148 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Studio créatif spécialisé en vidéo et contenu visuel. Basé à Montréal.">
-  <title>Studio D</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Studio D – Vidéos d’entreprise & Contenu numérique</title>
+<meta name="description" content="Studio D crée des vidéos d’entreprise et contenu numérique sur mesure pour captiver votre audience et valoriser votre marque." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+  /* Reset et base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #111;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  a:hover {
+    border-bottom: 2px solid #111;
+  }
+
+  /* Container central */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem 6rem;
+  }
+
+  header {
+    padding: 2rem 1rem 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  section {
+    margin-bottom: 6rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+  }
+
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h1, h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  p {
+    font-weight: 400;
+    color: #333;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+  }
+
+</style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Studio D</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">À propos</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <header>STUDIO D</header>
+  <main class="container">
+    <section>
+      <h1>Films corporatifs qui inspirent</h1>
+      <p>Chez Studio D, nous créons des vidéos d’entreprise sur mesure qui captivent et engagent votre audience, en mettant en avant votre histoire et vos valeurs.</p>
+    </section>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Créer des vidéos puissantes</h1>
-      <p>Nous transformons votre vision en contenu engageant.</p>
-      <a href="#contact" class="btn">Travaillons ensemble</a>
-    </div>
-  </section>
+    <section>
+      <h2>Notre approche</h2>
+      <p>Chaque projet débute par une consultation pour comprendre vos objectifs, puis notre équipe produit un contenu unique et impactant.</p>
+    </section>
 
-  <section id="services" class="section fade-in">
-    <h2>Nos Services</h2>
-    <p>Vidéo corporative, publicité, branding, production créative.</p>
-  </section>
+    <section>
+      <h2>Production vidéo</h2>
+      <p>Du tournage à la post-production, nous assurons une qualité irréprochable adaptée à vos besoins numériques et marketing.</p>
+    </section>
 
-  <section id="about" class="section fade-in">
-    <h2>À propos</h2>
-    <p>Studio basé à Montréal, mené par des créatifs passionnés.</p>
-  </section>
+    <section>
+      <h2>Diffusion & accompagnement</h2>
+      <p>Nous vous aidons à diffuser efficacement vos vidéos pour maximiser leur impact et atteindre vos cibles sur tous les canaux numériques.</p>
+    </section>
 
-  <section id="contact" class="section fade-in">
-    <h2>Contact</h2>
-    <p>Écrivez-nous à <a href="mailto:contact@studiod.dev">contact@studiod.dev</a></p>
-  </section>
+    <section>
+      <h2>Contact</h2>
+      <p>Envie de donner vie à votre projet vidéo ? <a href="mailto:contact@studiod.com">Contactez-nous</a> dès aujourd’hui.</p>
+    </section>
+  </main>
 
-  <footer>
-    © 2025 Studio D. Tous droits réservés.
-  </footer>
+  <script>
+    // Animation simple apparition au scroll
+    const sections = document.querySelectorAll('section');
 
-  <script src="script.js"></script>
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
